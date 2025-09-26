@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="checkbox" value="20" onchange="seguranca()">Teste 20%
+
+    <input type="checkbox" value="10" onchange="seguranca()">Teste 10%
+
+    <input type="checkbox" value="20" onchange="seguranca()">Teste 20%
+
+    <input type="checkbox" value="10" onchange="seguranca()">Teste 10%
+
+    <input type="checkbox" value="20" onchange="seguranca()">Teste 20%
+
+    <input type="checkbox" value="20" onchange="seguranca()">Teste 20%
+
+    <p id="resposta"></p>
+
+
+    <script>
+        function seguranca()
+        {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            var total =0;
+
+            for (var i=0; i<checkboxes.length; i++)
+            {
+                total+=parseFloat(checkboxes[i].value);
+            }
+            var resp=document.getElementById('resposta');
+            console.log(total)
+            resp.textContent = total + ' %';
+        }
+    </script>
+</body>
